@@ -34,7 +34,7 @@ function App() {
   const { points, addPoints } = usePoints()
   
   
-  const [screen, setScreen] = useState<Screen>('rewards')
+  const [screen, setScreen] = useState<Screen>('questions')
   
   
   return (

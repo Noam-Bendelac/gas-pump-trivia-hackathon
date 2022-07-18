@@ -23,14 +23,14 @@ code {
 
 
 :root {
-  --red: #ff0000;
-  --light-red: #ffaaaa;
-  --yellow: #eeee00;
-  --light-yellow: #ffffaa;
-  --green: #00cc11;
-  --light-green: #aaddaa;
-  --blue: #11bbff;
-  --light-blue: #bbeeff;
+  --red: #ff3c3c;
+  --light-red: #ffd7d7;
+  --yellow: #fed648;
+  --light-yellow: #fff8d2;
+  --green: #32b43f;
+  --light-green: #e9ffe5;
+  --blue: #0fc1fa;
+  --light-blue: #dff3ff;
   
   --header: #1954a0;
   --background: #174682;
