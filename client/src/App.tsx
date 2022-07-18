@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import styles from './App.module.css';
-import { QuestionScreen } from './QuestionScreen';
 import { Header } from './Header';
-import { Rewards } from './Rewards';
 import { Screen } from './Screen'
+import { QuestionScreen } from './QuestionScreen';
+import { Rewards } from './Rewards';
+import { Welcome } from './Welcome';
 
 
 
@@ -44,7 +45,7 @@ function App() {
       <main className={styles.main}>
         {
           screen === 'welcome'
-          ? null
+          ? <Welcome />
           : screen === 'questions'
           ? <QuestionScreen addPoints={addPoints} />
           : <Rewards />
