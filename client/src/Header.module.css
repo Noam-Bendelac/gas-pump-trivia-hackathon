@@ -1,0 +1,26 @@
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  background: var(--header);
+}
+
+
+.points {
+    /* justify-content: right; */
+    color: white;
+    margin: 20px;
+    /* padding: 30px; */
+    font-size: 20pt;
+    line-height: 2;
+    vertical-align: middle;
+}
+
+.logoSvg {
+  height: 100%;
+  padding: 7px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+}

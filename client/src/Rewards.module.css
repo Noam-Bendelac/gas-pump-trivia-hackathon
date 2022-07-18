@@ -1,24 +1,21 @@
-@import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+
+
+.rewards {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-.app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  .logoSvg {
+    height: 100%;
+    padding: 7px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    aspect-ratio: 1;
   }
 
-  .main {
-    flex: 1;
-    background: #114282;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
 
   .messages {
     flex: 1;
