@@ -7,45 +7,6 @@
   background: var(--background);
 }
 
-.headerColumn {
-  /* common styles */
-  flex: 1;
-  background: red;
-}
-
-.headerColumn1 {
-  composes: headerColumn;
-  border-radius: 10px;
-  background: pink;
-}
-
-.headerColumn2 {
-  composes: headerColumn;
-  background: yellow;
-}
-
-.headerColumn3 {
-  composes: headerColumn;
-  border-radius: 10px;
-  background: green;
-}
-
 .main {
   flex: 1;
-}
-
-.mainRow {
-  background: red;
-}
-
-.mainRow1 {
-  composes: mainRow;
-  border-radius: 10px;
-  background: green;
-}
-
-.mainRow2 {
-  composes: mainRow;
-  border-radius: 10px;
-  background: goldenrod;
 }

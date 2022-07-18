@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import logo from './logo.svg';
 import styles from './App.module.css';
 import { QuestionScreen } from './QuestionScreen';
 import { Header } from './Header';
@@ -35,7 +34,7 @@ function App() {
   const { points, addPoints } = usePoints()
   
   
-  const [screen, setScreen] = useState<Screen>('questions')
+  const [screen, setScreen] = useState<Screen>('rewards')
   
   
   return (
