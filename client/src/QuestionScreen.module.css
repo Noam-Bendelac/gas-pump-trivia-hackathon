@@ -3,14 +3,46 @@
 
 
 .questionScreen {
-  margin-inline: 10%;
+  padding-inline: 10%;
   text-align: center;
+  position: relative;
+  height: 100%;
 }
 
 .questionWrapper {
   margin: 40px 0px;
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
+}
+
+.counterWrapper {
+  position: absolute;
+  margin: 0 auto;
+  --diameter: 64px;
+  top: calc(var(--diameter) / -2);
+  left: 0;
+  right: 0;
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #5D9CEC;
+  border: 3.5px solid #5D9CEC;
+  color: white;
+  z-index: 4;
+}
+
+.counter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .question {
@@ -18,6 +50,7 @@
   background-color: #fffcf5;
   border-radius: 20px;
   padding: 30px 80px;
+  height: 77px;
   position: relative;
   z-index: 2;
   box-shadow: 0 4px 10px 0 #cf772480;
@@ -35,11 +68,11 @@
 }
 
 .answerChoices {
-  /* margin-inline: 15%; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 0;
+  margin-top: 40px;
   font-size: 20pt;
   font-weight: bold;
 }
@@ -49,7 +82,6 @@
 
 .answerChoice {
   list-style-type: none;
-  /* margin: 10px; */
 }
 
 .answerButton {
@@ -125,4 +157,36 @@
   right: 0;
 }
 
+
+.mascotWrapper {
+  position: absolute;
+  right: 0;
+  width: 350px;
+  bottom: -147px;
+}
+
+
+.mascotWrapperWaiting {
+  composes: mascotWrapper;
+  transition: bottom 0.18s ease-in-out;
+}
+
+.mascotWrapperAnswered {
+  composes: mascotWrapper;
+  transition: bottom 0.75s ease-in-out;
+  bottom: -70px;
+}
+
+.mascot {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 0;
+}
 

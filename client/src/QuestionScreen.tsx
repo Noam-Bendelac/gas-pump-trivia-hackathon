@@ -2,10 +2,11 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 import { questions } from './questions'
-
-
-
 import styles from './QuestionScreen.module.css'
+import sadGuy from './sad-guy.svg'
+import happyGuy from './lil-guy1.svg'
+import confetti from './confetti.svg'
+
 
 
 const answerChoicesStyles = [
@@ -27,7 +28,7 @@ export const QuestionScreen = ({
 }: {
   addPoints: (_: number) => void,
 }) => {
-  // const [counter, setCounter]
+  const [counter, setCounter] = useState(0)
   
   const [index, setIndex] = useState(0)
   const question = questions[index]
@@ -37,7 +38,9 @@ export const QuestionScreen = ({
   
   const queueNextQuestion = () => {
     setTimeout(() => {
-      setIndex(Math.floor(Math.random() * questions.length))
+      // setIndex(Math.floor(Math.random() * questions.length))
+      setIndex(index => (index + 1) % questions.length)
+      setCounter(count => count + 1)
       setState('waiting')
     }, 5000)
   }
@@ -45,6 +48,9 @@ export const QuestionScreen = ({
   
   return <div className={styles.questionScreen}>
     <div className={styles.questionWrapper}>
+      <span className={styles.counterWrapper}>
+        <span className={styles.counter}>{counter + 1}</span>
+      </span>
       <h1 className={styles.question}>
         {question.question}
       </h1>
@@ -75,6 +81,21 @@ export const QuestionScreen = ({
     </ol>
     
     { state !== 'waiting' && <Toast state={state} /> }
+    
+    <div className={
+      state === 'waiting'
+      ? styles.mascotWrapperWaiting
+      : styles.mascotWrapperAnswered
+    }>
+      <img
+        className={styles.mascot}
+        src={state === 'incorrect' ? sadGuy : happyGuy}
+        alt="mascot"
+      />
+      { state === 'correct' &&
+        <img className={styles.confetti} src={confetti} alt="confetti" />
+      }
+    </div>
     
   </div>
 }
