@@ -1,4 +1,5 @@
 import styles from './Rewards.module.css';
+import lilGuy from './lil-guy1.svg'
 
 
 
@@ -11,26 +12,29 @@ export const Rewards = ({
 }) => {
   return <div className={styles.rewards}>
     <div className={styles.messages}>
-      <div className={styles.tittle}> Thanks for playing! </div>
-      <div className={styles.subtittle}> You're ranked <b>#24</b> in the area! </div>
+      <div className={styles.title}> Thanks for playing! </div>
+      <div className={styles.subtitle}> You're ranked <b>#24</b> in the area! </div>
     </div>
 
-    <div className={styles.container}>
+    <div className={styles.statsContainer}>
 
       <div className={styles.statistics}>
-        <div className={styles.pointsTittle}> YOU'VE EARNED </div>
+        <div className={styles.pointsTitle}> YOU'VE EARNED </div>
         <div className={styles.pointsNumber}>{sessionPoints}</div>
         <div className={styles.pointsText}>POINTS</div>
       </div>
 
-      <div className={styles.logoSvg}></div>
+      
 
       <div className={styles.statistics}>
-        <div className={styles.pointsTittle}>YOU NOW HAVE </div>
+        <div className={styles.pointsTitle}>YOU NOW HAVE </div>
         <div className={styles.pointsNumber}>{totalPoints}</div>
         <div className={styles.pointsText}>POINTS</div>
       </div>
 
     </div>
+    
+    <img className={styles.mascot} src={lilGuy} alt="mascot" />
+    
   </div>
 } 

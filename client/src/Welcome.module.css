@@ -1,25 +1,25 @@
 
-.container {
-    background: #174682;
-    height: 100vh;
+.welcome {
+    /* height: 100vh; */
     flex: 1;
     color: #FFFFFF;
+    padding: 78px 72px;
+    position: relative;
 }
 
-.row1 {
+.top {
     font-weight: bold;
-    padding-left: 60px;
 }
 
 .welcomeText {
-    padding-top: 60px;
     font-size: 50px;
 }
 
-.subtittle {
+.subtitle {
     padding-top: 30px;
-    font-size: 40px;
+    font-size: 25px;
     color: #9CB9D4;
+    text-transform: uppercase;
 }
 
 .pointsText{
@@ -27,55 +27,53 @@
 }
 
 .divisor {
-    margin-inline: 60px;
-    height: 12px;
+    height: 4px;
     background: #AFAFAF;
 }
 
 
-.row2 {
-    margin-inline: 17%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.buttons {
+    display: flex;
     padding: 0;
-    margin: 30px;
-   
-
+    margin-block: 30px;
+    gap: 20px;
+    
 }
 
-.button1{
-    /* height: 200px; */
-    background: #FEC048;
-    color: #174682;
+.button {
     height: 100px;
-    width: 80%;
-    padding: 20px;
-    margin-inline: 60px;
+    /* width: 80%; */
+    flex: 1;
+    /* padding: 30px 0; */
     box-sizing: border-box;
-    border-radius: 20px;
-    font-size: 50px;
-    font-weight: 700;
-    border: 5px solid #FFB526;
+    border-radius: 25px;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--background);
+    box-shadow: 6px 6px 10px 9px #002C604D;
 }
 
-.button2{
-    /* height: 200px; */
+.button1 {
+    composes: button;
+    background: #ffd075;
+    border: 6px solid #db9000;
+}
+
+.button2 {
+    composes: button;
     background: #ECE9E2;
-    color: #174682;
-    height: 100px;
-    width: 80%;  
-    padding: 20px;
-    margin-inline: 60px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    font-size: 50px;
-    font-weight: 700;
-    border: 5px solid #D6D3CE;
-
+    border: 6px solid #c7c7c7;
 }
 
 
 
+.mascot {
+    position: absolute;
+    transform: rotate(-49deg);
+    transform-origin: center right;
+    bottom: 400px;
+    right: -110px;
+}
 
 
 
