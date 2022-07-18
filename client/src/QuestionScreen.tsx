@@ -17,6 +17,20 @@ const answerChoicesStyles = [
   styles.answer4,
 ]
 
+const answerChoicesLabels = [
+  'A',
+  'B',
+  'C',
+  'D',
+]
+
+const answerChoicesLabelStyles = [
+  styles.label1,
+  styles.label2,
+  styles.label3,
+  styles.label4,
+]
+
 
 type State =
   | 'waiting'
@@ -105,6 +119,9 @@ export const QuestionScreen = ({
               }
             }}
           >
+            <span className={answerChoicesLabelStyles[idx]}>
+              {answerChoicesLabels[idx]}
+            </span>
             {choice}
           </button>
         </li>

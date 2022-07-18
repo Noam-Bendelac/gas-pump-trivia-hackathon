@@ -62,14 +62,13 @@ function App() {
   
   
   return (<>
-    <div className={styles.speechOverlayWrapper}>
-      <div className={styles.speechOverlay}>
-        <PushToTalkButton />
-        <IntroPopup />
-      </div>
-    </div>
     <div className={styles.app}>
-      
+      <div className={styles.speechOverlayWrapper}>
+        <div className={styles.speechOverlay}>
+          <PushToTalkButton />
+          <IntroPopup />
+        </div>
+      </div>
       
       { screen !== 'welcome' && <Header
         phoneNumber={null}

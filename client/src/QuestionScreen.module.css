@@ -92,6 +92,10 @@
   border-radius: 16px;
   border: 6px solid var(--border);
   background: var(--background);
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 18px;
 }
 
 .answer1 {
@@ -116,6 +120,34 @@
   composes: answerButton;
   --border: var(--green);
   --background: var(--light-green);
+}
+
+.choiceLabel {
+  display: inline-block;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  background: var(--background);
+  line-height: 1.4;
+}
+
+.label1 {
+  composes: choiceLabel;
+  --background: var(--red);
+}
+.label2 {
+  composes: choiceLabel;
+  --background: var(--yellow);
+}
+.label3 {
+  composes: choiceLabel;
+  --background: var(--blue);
+}
+.label4 {
+  composes: choiceLabel;
+  --background: var(--green);
 }
 
 
