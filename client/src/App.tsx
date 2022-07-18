@@ -5,6 +5,8 @@ import { Screen } from './Screen'
 import { QuestionScreen } from './QuestionScreen';
 import { Rewards } from './Rewards';
 import { Welcome } from './Welcome';
+import { IntroPopup, PushToTalkButton } from '@speechly/react-ui';
+import { useFilterByIntent, useOnFinalSpeechSegment } from './speechlyUtils';
 
 
 
@@ -42,27 +44,50 @@ function App() {
   const [screen, setScreen] = useState<Screen>('welcome')
   
   
-  return (
-    <div className={styles.app}>
-      { screen === 'welcome'
-      ? <Welcome setScreen={setScreen} points={totalPoints} />
-      : <>
-          <Header
-            phoneNumber={null}
-            points={sessionPoints}
-            showNavToRewards={screen === 'questions'}
-            setScreen={setScreen}
-          />
-          <main className={styles.main}>
-            { screen === 'questions'
-            ? <QuestionScreen addPoints={addPoints} />
-            : <Rewards sessionPoints={sessionPoints} totalPoints={totalPoints} />
-            }
-          </main>
-        </>
-      }
-    </div>
+  // const [audioInitialized, setAudioInitialized] = useState(false)
+  
+  
+  useOnFinalSpeechSegment(
+    useFilterByIntent('start',
+    useCallback(() => {
+      setScreen('questions')
+    }, []))
   )
+  useOnFinalSpeechSegment(
+    useFilterByIntent('rewards',
+    useCallback(() => {
+      setScreen('rewards')
+    }, []))
+  )
+  
+  
+  return (<>
+    <div className={styles.speechOverlayWrapper}>
+      <div className={styles.speechOverlay}>
+        <PushToTalkButton />
+        <IntroPopup />
+      </div>
+    </div>
+    <div className={styles.app}>
+      
+      
+      { screen !== 'welcome' && <Header
+        phoneNumber={null}
+        points={sessionPoints}
+        showNavToRewards={screen === 'questions'}
+        setScreen={setScreen}
+      /> }
+      
+      <main className={styles.main}>
+        { screen === 'welcome'
+        ? <Welcome setScreen={setScreen} points={totalPoints} />
+        : screen === 'questions'
+        ? <QuestionScreen addPoints={addPoints} />
+        : <Rewards sessionPoints={sessionPoints} totalPoints={totalPoints} />
+        }
+      </main>
+    </div>
+  </>)
 }
 
 export default App

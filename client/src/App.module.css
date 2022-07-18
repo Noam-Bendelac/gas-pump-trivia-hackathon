@@ -10,3 +10,18 @@
 .main {
   flex: 1;
 }
+
+.speechOverlayWrapper {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+}
+
+.speechOverlay {
+  display: inline-block;
+  pointer-events: auto;
+}

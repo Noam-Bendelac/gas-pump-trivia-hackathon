@@ -1,11 +1,12 @@
 
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { questions } from './questions'
 import styles from './QuestionScreen.module.css'
 import sadGuy from './sad-guy.svg'
 import happyGuy from './lil-guy1.svg'
 import confetti from './confetti.svg'
+import { useFilterByEntity, useFilterByIntent, useOnFinalSpeechSegment } from './speechlyUtils'
 
 
 
@@ -23,6 +24,32 @@ type State =
   | 'incorrect'
 
 
+
+
+
+
+const mapOptionToIdx = new Map([
+  ['A', 0],
+  ['B', 1],
+  ['C', 2],
+  ['D', 3],
+])
+
+const useOnAnswerSelected = (selectAnswer: (idx: number) => void) => {
+  useOnFinalSpeechSegment(
+    useFilterByIntent('answer',
+    useFilterByEntity('option',
+    useCallback(option => {
+      const idx = mapOptionToIdx.get(option)
+      if (idx !== undefined) {
+        selectAnswer(idx)
+      }
+    }, [selectAnswer])))
+  )
+}
+
+
+
 export const QuestionScreen = ({
   addPoints,
 }: {
@@ -36,14 +63,24 @@ export const QuestionScreen = ({
   const [state, setState] = useState<State>('waiting')
   
   
-  const queueNextQuestion = () => {
+  const selectAnswer = useCallback((idx: number) => {
+    if (idx === question.correctAnswer) {
+      setState('correct')
+      addPoints(50)
+    } else {
+      setState('incorrect')
+    }
     setTimeout(() => {
       // setIndex(Math.floor(Math.random() * questions.length))
       setIndex(index => (index + 1) % questions.length)
       setCounter(count => count + 1)
       setState('waiting')
     }, 5000)
-  }
+  }, [addPoints, question])
+  
+  
+  
+  useOnAnswerSelected(selectAnswer)
   
   
   return <div className={styles.questionScreen}>
@@ -64,13 +101,7 @@ export const QuestionScreen = ({
             className={answerChoicesStyles[idx]}
             onClick={() => {
               if (state === 'waiting') {
-                if (idx === question.correctAnswer) {
-                  setState('correct')
-                  addPoints(50)
-                } else {
-                  setState('incorrect')
-                }
-                queueNextQuestion()
+                selectAnswer(idx)
               }
             }}
           >
