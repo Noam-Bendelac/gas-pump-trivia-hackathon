@@ -32,26 +32,35 @@ function App() {
   
   // const phoneNumber = usePhoneNumber()
   
-  const { points, addPoints } = usePoints()
+  const startingPoints = 6450
+  
+  const { points: sessionPoints, addPoints } = usePoints()
+  
+  const totalPoints = startingPoints + sessionPoints
   
   
-  const [screen, setScreen] = useState<Screen>('questions')
+  const [screen, setScreen] = useState<Screen>('welcome')
   
   
   return (
     <div className={styles.app}>
-      <Header phoneNumber={null} points={points} setScreen={setScreen} />
-      
-      <main className={styles.main}>
-        {
-          screen === 'welcome'
-          ? <Welcome />
-          : screen === 'questions'
-          ? <QuestionScreen addPoints={addPoints} />
-          : <Rewards />
-        }
-        
-      </main>
+      { screen === 'welcome'
+      ? <Welcome setScreen={setScreen} points={totalPoints} />
+      : <>
+          <Header
+            phoneNumber={null}
+            points={sessionPoints}
+            showNavToRewards={screen === 'questions'}
+            setScreen={setScreen}
+          />
+          <main className={styles.main}>
+            { screen === 'questions'
+            ? <QuestionScreen addPoints={addPoints} />
+            : <Rewards sessionPoints={sessionPoints} totalPoints={totalPoints} />
+            }
+          </main>
+        </>
+      }
     </div>
   )
 }

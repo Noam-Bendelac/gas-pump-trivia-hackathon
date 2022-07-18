@@ -2,7 +2,13 @@ import styles from './Rewards.module.css';
 
 
 
-export const Rewards = () => {
+export const Rewards = ({
+  sessionPoints,
+  totalPoints,
+}: {
+  sessionPoints: number,
+  totalPoints: number,
+}) => {
   return <div className={styles.rewards}>
     <div className={styles.messages}>
       <div className={styles.tittle}> Thanks for playing! </div>
@@ -13,7 +19,7 @@ export const Rewards = () => {
 
       <div className={styles.statistics}>
         <div className={styles.pointsTittle}> YOU'VE EARNED </div>
-        <div className={styles.pointsNumber}>50</div>
+        <div className={styles.pointsNumber}>{sessionPoints}</div>
         <div className={styles.pointsText}>POINTS</div>
       </div>
 
@@ -21,7 +27,7 @@ export const Rewards = () => {
 
       <div className={styles.statistics}>
         <div className={styles.pointsTittle}>YOU NOW HAVE </div>
-        <div className={styles.pointsNumber}>1500</div>
+        <div className={styles.pointsNumber}>{totalPoints}</div>
         <div className={styles.pointsText}>POINTS</div>
       </div>
 

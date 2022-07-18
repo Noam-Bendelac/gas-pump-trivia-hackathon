@@ -6,15 +6,26 @@
   background: var(--header);
 }
 
+.rightSide {
+  display: flex;
+  margin-inline: 30px;
+  gap: 30px;
+}
+
+.demoRewardsButton {
+  background: transparent;
+  border: 2px solid white;
+  margin-block: auto;
+  padding: 10px 15px;
+  border-radius: 12px;
+  color: white;
+}
+
 
 .points {
-    /* justify-content: right; */
-    color: white;
-    margin: 20px;
-    /* padding: 30px; */
-    font-size: 20pt;
-    line-height: 2;
-    vertical-align: middle;
+  color: white;
+  margin: auto 0;
+  font-size: 20pt;
 }
 
 .logoSvg {
