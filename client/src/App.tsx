@@ -1,23 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+
+
+const Icon = ({ src }: { src: string }) => {
+  
+  
+  // const logo = props.logo
+  return <img src={src} />
+}
+
+
+
+const Counter = () => {
+  // let index = 0
+  const [index, setIndex] = useState(0)
+  console.log(`rerendering with index: ${index}`)
+  return <div>
+    <p>{index}</p>
+    <button onClick={() => { setIndex(index + 1) }}>+</button>
+  </div>
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={styles.app}>
+      <header className={styles.appHeader}>
+        <img src={logo} className={styles.appLogo} alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className={styles.appLink}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          testing
         </a>
+        {/* <Icon    src={logo}    /> */}
+        <Counter />
+        <Counter />
       </header>
     </div>
   );
