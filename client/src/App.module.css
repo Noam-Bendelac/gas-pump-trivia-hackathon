@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background: #1954a0;
 }
 
 .header {
@@ -37,7 +38,6 @@
 
 .main {
   flex: 1;
-  background: blue;
 }
 
 .mainRow {
@@ -55,18 +55,3 @@
   border-radius: 10px;
   background: goldenrod;
 }
-
-.answerChoices {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-
-
-
-.answerChoice {
-  
-  
-}
-
-

@@ -1,0 +1,124 @@
+
+
+
+
+.questionScreen {
+  margin-inline: 10%;
+  text-align: center;
+}
+
+.questionWrapper {
+  margin: 20px;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.question {
+  border: 4px solid orange;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.questionDecoration {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: -15px;
+  left: 80px;
+  right: 80px;
+  border-radius: 20px;
+  background: orange;
+}
+
+.answerChoices {
+  margin-inline: 15%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0;
+}
+
+
+
+
+.answerChoice {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.answerButton {
+  all: unset;
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 4px solid var(--border);
+  background: var(--background);
+}
+
+.answer1 {
+  composes: answerButton;
+  --border: var(--red);
+  --background: var(--light-red);
+}
+
+.answer2 {
+  composes: answerButton;
+  --border: var(--yellow);
+  --background: var(--light-yellow);
+}
+
+.answer3 {
+  composes: answerButton;
+  --border: var(--blue);
+  --background: var(--light-blue);
+}
+
+.answer4 {
+  composes: answerButton;
+  --border: var(--green);
+  --background: var(--light-green);
+}
+
+
+
+
+.resultMessage {
+  color: white;
+  margin-inline: auto;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.correct {
+  /* background: var(--green); */
+}
+
+.incorrect {
+  /* background: var(--red); */
+}
+
+
+.loadingBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: right 5s;
+}
+.waitingBar {
+  right: 100%;
+}
+.correctBar {
+  right: 0;
+}
+.incorrectBar {
+  right: 0;
+}
+
+
