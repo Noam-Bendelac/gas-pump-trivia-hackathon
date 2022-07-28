@@ -1,0 +1,81 @@
+
+.container {
+    background: #174682;
+    height: 100vh;
+    flex: 1;
+    color: #FFFFFF;
+}
+
+.row1 {
+    font-weight: bold;
+    padding-left: 60px;
+}
+
+.welcomeText {
+    padding-top: 60px;
+    font-size: 50px;
+}
+
+.subtittle {
+    padding-top: 30px;
+    font-size: 40px;
+    color: #9CB9D4;
+}
+
+.pointsText{
+    font-size: 150px;
+}
+
+.divisor {
+    margin-inline: 60px;
+    height: 12px;
+    background: #AFAFAF;
+}
+
+
+.row2 {
+    margin-inline: 17%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin: 30px;
+   
+
+}
+
+.button1{
+    /* height: 200px; */
+    background: #FEC048;
+    color: #174682;
+    height: 100px;
+    width: 80%;
+    padding: 20px;
+    margin-inline: 60px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 50px;
+    font-weight: 700;
+    border: 5px solid #FFB526;
+}
+
+.button2{
+    /* height: 200px; */
+    background: #ECE9E2;
+    color: #174682;
+    height: 100px;
+    width: 80%;  
+    padding: 20px;
+    margin-inline: 60px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 50px;
+    font-weight: 700;
+    border: 5px solid #D6D3CE;
+
+}
+
+
+
+
+
+

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import styles from './App.module.css';
 import { QuestionScreen } from './QuestionScreen';
 import { Header } from './Header';
+import welcome from './Welcome';
 
 
 
