@@ -8,7 +8,7 @@
 }
 
 .questionWrapper {
-  margin: 20px;
+  margin: 40px 0px;
   position: relative;
   margin-bottom: 35px;
 }
@@ -17,7 +17,7 @@
   border: 4px solid orange;
   background-color: white;
   border-radius: 20px;
-  padding: 30px;
+  padding: 30px 80px;
   position: relative;
   z-index: 2;
 }
@@ -34,10 +34,12 @@
 }
 
 .answerChoices {
-  margin-inline: 15%;
+  /* margin-inline: 15%; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   padding: 0;
+  font-size: 20pt;
 }
 
 
@@ -45,12 +47,12 @@
 
 .answerChoice {
   list-style-type: none;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .answerButton {
   all: unset;
-  height: 60px;
+  height: 80px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 10px;

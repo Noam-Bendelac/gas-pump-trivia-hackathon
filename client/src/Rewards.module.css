@@ -1,0 +1,62 @@
+
+
+.rewards {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+  .logoSvg {
+    height: 100%;
+    padding: 7px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    aspect-ratio: 1;
+  }
+
+
+  .messages {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .tittle {
+    font-size: 60px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: #FFB347;
+  }
+
+  .subtittle {
+    font-size: 28px;
+    padding-top: 5px;
+    align-self: center;
+  }
+
+  .container {
+    display: flex;
+    flex: 1;
+    padding-top: 50px;
+  }
+  
+
+  .statistics {
+    flex: 1;
+    padding: 20px;
+    font-weight: 600;
+  }
+
+  .pointsTittle {
+    font-size: 28px;
+    color: #95B4E2;
+  }
+
+  .pointsNumber {
+    font-size: 120px;
+  }
+
+  .pointsText {
+    font-size: 28px;
+  }

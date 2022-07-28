@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
-import logo from './logo.svg';
 import styles from './App.module.css';
 import { QuestionScreen } from './QuestionScreen';
 import { Header } from './Header';
+import { Rewards } from './Rewards';
+import { Screen } from './Screen'
 
 
 
@@ -25,11 +26,6 @@ const usePoints = () => {
 
 
 
-type Screen =
-  | 'welcome'
-  | 'questions'
-  | 'results'
-
 
 function App() {
   
@@ -38,12 +34,12 @@ function App() {
   const { points, addPoints } = usePoints()
   
   
-  const [screen, setScreen] = useState<Screen>('questions')
+  const [screen, setScreen] = useState<Screen>('rewards')
   
   
   return (
     <div className={styles.app}>
-      <Header phoneNumber={null} points={points} />
+      <Header phoneNumber={null} points={points} setScreen={setScreen} />
       
       <main className={styles.main}>
         {
@@ -51,7 +47,7 @@ function App() {
           ? null
           : screen === 'questions'
           ? <QuestionScreen addPoints={addPoints} />
-          : null
+          : <Rewards />
         }
         
       </main>
